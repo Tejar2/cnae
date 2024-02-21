@@ -43,49 +43,81 @@ section {
 
 /* header */
 
-header {
+.header {
+    width: 100%;
+    height: 75px;
+    background: #101922;
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 200;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
 }
 
-header.shadow {
+/*Cambio de color al scrollear*/
+.header.shadow {
     background: var(--bg-color);
-    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
-    transition: 0.4s;
-}
-
-header.shadow .logo {
     color: var(--second-color);
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0;
+/*---------------- Hasta Aquí--------------------*/
+
+.container-header {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--bg-color);
+    float: left;
+    line-height: 75px;
 }
 
-.login {
-    padding: 8px 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    border-radius: 4px;
-    background: var(--second-color);
-    color: var(--bg-color);
+.logo h1 {
+    color: var(--second-color);
+    font-weight: 400;
+    font-size: 24px;
+    cursor: default;
 }
 
-.login:hover {
-    background: hsl(24, 98%, 58%);
-    transition: 0.3s;
+.menu {
+    float: right;
+    line-height: 75px;
+}
+
+.menu a {
+    color: var(--second-color);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    line-height: normal;
+    font-size: 14px;
+    transition: all 500ms ease;
+    border-bottom: 4px solid transparent;
+}
+
+.menu a:hover {
+    color: var(--second-color);
+    border-bottom: 4px solid var(--second-color);
+}
+
+/*Estilo de botón de menú en header responsive*/
+#btn-menu {
+    display: none;
+}
+
+.boton {
+    float: right;
+    display: none;
+}
+
+.boton label {
+    color: #fff;
+    background: #2a343e;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 /* home */
@@ -340,6 +372,40 @@ header.shadow .logo {
         width: 95%;
     }
 }
+
+/*Botón de header responsive*/
+@media only screen and (min-width:320px) and (max-width:768px) {
+    .header {
+        height: 60px;
+    }
+    .logo, .boton {
+        line-height: 60px;
+    }
+    .logo h1 {
+        font-size: 18px;
+    }
+    .menu {
+        position: absolute;
+        background: #234;
+        width: 100%;
+        height: 100vh;
+        top: 60px;
+        left: 0;
+        transition: all 500ms ease;
+        transform: translateX(-100%);
+    }
+    #btn-menu:checked ~ .menu{
+        transform: translateX(0%);
+    }
+    .menu a {
+        display: block;
+        margin-top: 10px;
+    }
+    .boton {
+        display: block;
+    }
+}
+/*-------------------------- Hasta aquí-----------------*/
 
 @media (max-width: 768px) {
     .nav {
