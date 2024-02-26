@@ -1,3 +1,13 @@
+/* JS para el menu de encabezado responsive */
+var navLinks = document.getElementById("navLinks");
+function showMenu() {
+    navLinks.style.right = "0";
+}
+
+function hideMenu() {
+    navLinks.style.right = "-200px";
+}
+
 // Filter JS
 $(document).ready(function(){
     $('.filter-item').click(function(){
@@ -14,10 +24,4 @@ $(document).ready(function(){
     $('.filter-item').click(function(){
         $(this).addClass("active-filter").siblings().removeClass('active-filter');
     });
-});
-// Header Background Change On Scroll
-let header = document.querySelector('header')
-
-window.addEventListener('scroll', () => {
-    header.classList.toggle('shadow', window.scrollY > 0);
 });
