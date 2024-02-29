@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 /*Colores de la página*/
@@ -18,11 +19,6 @@
 ::selection {
     color: var(--white);
     background: var(--lightred);
-}
-
-/*Le quita la barra de movimiento Y y X a la página*/
-::-webkit-scrollbar {
-    display: none;
 }
 
 /*Encabezado*/
@@ -319,97 +315,97 @@ h3 {
 
 /* Estilo de Footer */
 footer {
-    box-sizing: border-box;
-    background-color: var(--black);
-}
-
-.footer-container {
+    position: relative;
     width: 100%;
-    padding: 70px 30px 20px;
-}
-
-.social-icons {
+    background: var(--lightred);
+    min-height: 100px;
+    padding: 20px 50px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
-.social-icons a {
-    text-decoration: none;
-    padding: 10px;
-    background-color: var(--white);
-    margin: 10px;
-    border-radius: 50%;
-}
-
-.social-icons a i {
-    font-size: 2em;
-    color: var(--black);
-    opacity: 0.9;
-}
-
-.social-icons a:hover {
-    background-color: var(--lightred);
-    transition: 0.5s;
-}
-
-.social-icons a:hover i {
-    color: var(--white);
-    transition: 0.5s;
-}
-
-.footer-nav {
-    margin: 30px 0;
-}
-
-.footer-nav ul {
+footer .social-icon, footer .menu {
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social-icon li, footer .menu li {
     list-style: none;
 }
 
-.footer-nav ul li a {
+footer .social-icon li a {
+    font-size: 2em;
     color: var(--white);
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
+    margin: 0 10px;
+    display: inline-block;
     transition: 0.5s;
 }
 
-.footer-nav ul li a:hover {
+footer .social-icon li a {
+    transform: translateY(-10px);
+}
+
+footer .menu li a {
+    font-size: 1.2em;
+    color: var(--white);
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75s;
+}
+
+footer .menu li a:hover {
     opacity: 1;
 }
 
-.footer-btn {
-    background-color: var(--grey);
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-btn p {
+footer p {
     color: var(--white);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
-.designer {
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--white) url(/images/wave1.png);
+    background-size: 1000px 100px;
 }
 
-/*Estilo de Responsive Footer*/
-@media (max-width: 700px) {
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animatewave 3s linear infinite;
+}
 
-    .footer-nav ul {
-        flex-direction: column;
+/* Animación de ola en el footer */
+@keyframes animatewave {
+
+    0% {
+        background-position-x: 0px;
     }
 
-    .footer-nav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 10px;
+    100% {
+        background-position-x: 1000px;
     }
+}
+
+.zoom li a {
+    transition: 1s;
+}
+
+.zoom li a:hover {
+    transform: scale(1.1);
 }
 
 /* ------------- Estilo para Nosotros -----------------*/
