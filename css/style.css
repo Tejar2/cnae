@@ -25,7 +25,7 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(/images/herocnae.jpeg);
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(/images/herocnae.jpeg) !important;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -381,7 +381,7 @@ h3 {
 .cta {
     margin: 100px auto;
     width: 80%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/herocnae.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/herocnae.jpeg) !important;
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -498,7 +498,7 @@ footer p {
 .sub-header {
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/images/herocnae.jpeg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/images/herocnae.jpeg) !important;
     background-position: center;
     background-size: cover;
     text-align: center;
